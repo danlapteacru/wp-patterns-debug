@@ -1,0 +1,40 @@
+{
+    "name": "danlapteacru/wp-patterns-debug",
+    "description": "Pattern registry browser and block/pattern debug panel for the WordPress block editor.",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "keywords": [
+        "wordpress",
+        "wordpress-plugin",
+        "gutenberg",
+        "block-editor",
+        "patterns",
+        "blocks",
+        "debug"
+    ],
+    "homepage": "https://github.com/danlapteacru/wp-patterns-debug",
+    "support": {
+        "issues": "https://github.com/danlapteacru/wp-patterns-debug/issues",
+        "source": "https://github.com/danlapteacru/wp-patterns-debug"
+    },
+    "authors": [
+        {
+            "name": "Dan Lapteacru",
+            "email": "danlapteacru@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "composer/installers": "^1.0 || ^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "WpPatternsDebug\\": "src/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    }
+}

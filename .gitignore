@@ -1,0 +1,5 @@
+# Built assets are committed so Composer/git installs work without a build step.
+node_modules/
+vendor/
+*.log
+.DS_Store
