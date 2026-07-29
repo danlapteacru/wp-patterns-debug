@@ -44,4 +44,15 @@ describe( 'dump', () => {
 		expect( dump( { big: BigInt( 9 ) } ) ).toContain( '"9"' );
 		expect( dump( undefined ) ).toBe( 'undefined' );
 	} );
+
+	it( 'serializes RichTextData-like values as their HTML string', () => {
+		const richText = {
+			toHTMLString: () => '<strong>Hi</strong>',
+			toString: () => '<strong>Hi</strong>',
+		};
+
+		expect( JSON.parse( dump( { content: richText } ) ) ).toEqual( {
+			content: '<strong>Hi</strong>',
+		} );
+	} );
 } );

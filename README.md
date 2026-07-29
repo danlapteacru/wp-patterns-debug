@@ -20,6 +20,28 @@ A **Debug** panel in the block inspector for the selected block, and the same pa
 - **Attributes editor**: the block's attributes as raw, validated JSON. Apply/reset; deleting a key removes the attribute; keys outside the block type's attribute schema are flagged but allowed.
 - **Pattern provenance**: shows when the selected block is a synced pattern instance (`core/block` ref, `wp_block` record, per-instance overrides) or was inserted from a pattern (`metadata.patternName`), with dumps of the source pattern.
 
+## Screenshots
+
+**Debug panel in the block inspector** — overview, dumps, serialized HTML, and the raw JSON attributes editor:
+
+![Debug panel in the block inspector](https://raw.githubusercontent.com/danlapteacru/wp-patterns-debug/main/screenshots/debug-panel.png)
+
+**Dump modals** — pretty-printed, copyable dumps of the block instance, block type, or wrapper element:
+
+![Dump modal showing the block instance](https://raw.githubusercontent.com/danlapteacru/wp-patterns-debug/main/screenshots/dump-modal.png)
+
+**Pattern browser** — search and filter every registered and user pattern, with metadata, block counts, and live previews:
+
+![Pattern browser with search and live preview](https://raw.githubusercontent.com/danlapteacru/wp-patterns-debug/main/screenshots/pattern-browser.png)
+
+**Synced pattern provenance** — the sidebar's Selected block panel debugging a `core/block` instance (the block inspector renders no panels for these):
+
+![Selected block panel showing synced pattern provenance](https://raw.githubusercontent.com/danlapteacru/wp-patterns-debug/main/screenshots/synced-pattern.png)
+
+**Server registry** — the raw server-side pattern registry, dumped over REST, including patterns hidden from the inserter:
+
+![Server registry dump modal](https://raw.githubusercontent.com/danlapteacru/wp-patterns-debug/main/screenshots/server-registry.png)
+
 ## Installation
 
 Via Composer:

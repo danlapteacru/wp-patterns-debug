@@ -21,6 +21,16 @@ function sanitize( value: unknown, ancestors: readonly object[] ): unknown {
 		return '[React element]';
 	}
 
+	// RichTextData instances (rich-text block attributes since WP 6.5)
+	// stringify to {}; their HTML string is both readable and valid to
+	// apply back through the attributes editor.
+	if (
+		typeof ( value as { toHTMLString?: unknown } ).toHTMLString ===
+		'function'
+	) {
+		return String( value );
+	}
+
 	if ( ancestors.includes( value ) ) {
 		return '[Circular]';
 	}

@@ -1,6 +1,6 @@
 {
   "name": "wp-patterns-debug",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Pattern registry browser and block/pattern debug panel for the WordPress block editor.",
   "author": "Dan Lapteacru",
   "license": "GPL-2.0-or-later",

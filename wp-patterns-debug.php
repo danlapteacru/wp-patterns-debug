@@ -3,7 +3,7 @@
  * Plugin Name: Patterns Debug
  * Plugin URI: https://github.com/danlapteacru/wp-patterns-debug
  * Description: Adds a pattern registry browser and a block/pattern debug panel to the block editor.
- * Version: 0.1.0
+ * Version: 0.1.1
  * Requires at least: 6.6
  * Requires PHP: 8.1
  * Author: Dan Lapteacru

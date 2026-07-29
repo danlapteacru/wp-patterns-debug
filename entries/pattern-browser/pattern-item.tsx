@@ -20,13 +20,20 @@ interface PatternItemProps {
 /**
  * Facts about the pattern worth showing at a glance.
  * @param pattern
+ * @param serverSource Source from the server registration; the client
+ *                     stores omit `source` for some registered patterns.
  */
-function metaEntries( pattern: EditorPattern ): [ string, string ][] {
+function metaEntries(
+	pattern: EditorPattern,
+	serverSource?: string
+): [ string, string ][] {
 	const entries: [ string, string ][] = [
 		[ __( 'Name', 'wp-patterns-debug' ), pattern.name ],
 		[
 			__( 'Source', 'wp-patterns-debug' ),
-			pattern.source ?? __( 'unknown', 'wp-patterns-debug' ),
+			pattern.source ??
+				serverSource ??
+				__( 'unknown', 'wp-patterns-debug' ),
 		],
 	];
 
@@ -85,7 +92,10 @@ function PatternDetails( { pattern, serverPattern }: PatternItemProps ) {
 	return (
 		<div className="wppd-item__details">
 			<dl className="wppd-item__meta">
-				{ metaEntries( pattern ).map( ( [ label, value ] ) => (
+				{ metaEntries(
+					pattern,
+					serverPattern?.source as string | undefined
+				).map( ( [ label, value ] ) => (
 					<div key={ label }>
 						<dt>{ label }</dt>
 						<dd>{ value }</dd>
