@@ -34,7 +34,7 @@ export default function DebugSections( { block }: DebugSectionsProps ) {
 	return (
 		<>
 			<section>
-				<h3>{ __( 'Overview', 'wp-patterns-debug' ) }</h3>
+				<h3>{ __( 'Overview', 'patterns-debug' ) }</h3>
 				<pre className="wppd-markup">
 					{ JSON.stringify( { name, clientId }, null, 2 ) }
 				</pre>
@@ -42,47 +42,35 @@ export default function DebugSections( { block }: DebugSectionsProps ) {
 					<li>
 						<CopyButton
 							text={ name }
-							label={ __(
-								'Copy block name',
-								'wp-patterns-debug'
-							) }
+							label={ __( 'Copy block name', 'patterns-debug' ) }
 						/>
 					</li>
 					<li>
 						<CopyButton
 							text={ clientId }
-							label={ __(
-								'Copy client ID',
-								'wp-patterns-debug'
-							) }
+							label={ __( 'Copy client ID', 'patterns-debug' ) }
 						/>
 					</li>
 				</ul>
 			</section>
 
 			<section>
-				<h3>{ __( 'Inspect', 'wp-patterns-debug' ) }</h3>
+				<h3>{ __( 'Inspect', 'patterns-debug' ) }</h3>
 				<ul className="wppd-actions">
 					<li>
 						<DumpButton
 							label={ __(
 								'Dump block instance',
-								'wp-patterns-debug'
+								'patterns-debug'
 							) }
-							title={ __(
-								'Block instance',
-								'wp-patterns-debug'
-							) }
+							title={ __( 'Block instance', 'patterns-debug' ) }
 							getValue={ () => block }
 						/>
 					</li>
 					<li>
 						<DumpButton
-							label={ __(
-								'Dump block type',
-								'wp-patterns-debug'
-							) }
-							title={ __( 'Block type', 'wp-patterns-debug' ) }
+							label={ __( 'Dump block type', 'patterns-debug' ) }
+							title={ __( 'Block type', 'patterns-debug' ) }
 							getValue={ () => blockType }
 						/>
 					</li>
@@ -90,11 +78,11 @@ export default function DebugSections( { block }: DebugSectionsProps ) {
 						<DumpButton
 							label={ __(
 								'Dump wrapper element attributes',
-								'wp-patterns-debug'
+								'patterns-debug'
 							) }
 							title={ __(
 								'Wrapper element attributes',
-								'wp-patterns-debug'
+								'patterns-debug'
 							) }
 							getValue={ () => {
 								const element = findBlockElement( clientId );
@@ -103,7 +91,7 @@ export default function DebugSections( { block }: DebugSectionsProps ) {
 									? elementAttributes( element )
 									: __(
 											'Block wrapper element not found.',
-											'wp-patterns-debug'
+											'patterns-debug'
 									  );
 							} }
 						/>
@@ -112,25 +100,19 @@ export default function DebugSections( { block }: DebugSectionsProps ) {
 			</section>
 
 			<section>
-				<h3>{ __( 'Block HTML', 'wp-patterns-debug' ) }</h3>
+				<h3>{ __( 'Block HTML', 'patterns-debug' ) }</h3>
 				<pre className="wppd-markup">{ serialized }</pre>
 				<ul className="wppd-actions">
 					<li>
 						<CopyButton
 							text={ serialized }
-							label={ __(
-								'Copy block HTML',
-								'wp-patterns-debug'
-							) }
+							label={ __( 'Copy block HTML', 'patterns-debug' ) }
 						/>
 					</li>
 					<li>
 						<DumpButton
-							label={ __(
-								'Dump block HTML',
-								'wp-patterns-debug'
-							) }
-							title={ __( 'Block HTML', 'wp-patterns-debug' ) }
+							label={ __( 'Dump block HTML', 'patterns-debug' ) }
+							title={ __( 'Block HTML', 'patterns-debug' ) }
 							getValue={ () => serialized }
 						/>
 					</li>

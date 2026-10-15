@@ -37,12 +37,12 @@ export default function AttributesEditor( {
 
 	return (
 		<section>
-			<h3>{ __( 'Attributes', 'wp-patterns-debug' ) }</h3>
+			<h3>{ __( 'Attributes', 'patterns-debug' ) }</h3>
 
 			<TextareaControl
 				__nextHasNoMarginBottom
 				hideLabelFromVision
-				label={ __( 'Attributes JSON', 'wp-patterns-debug' ) }
+				label={ __( 'Attributes JSON', 'patterns-debug' ) }
 				className="wppd-json-editor"
 				rows={ 12 }
 				value={ draft ?? liveJson }
@@ -54,12 +54,12 @@ export default function AttributesEditor( {
 					{ validation.error === 'invalid-json'
 						? sprintf(
 								/* translators: %s: JSON parser error message. */
-								__( 'Invalid JSON: %s', 'wp-patterns-debug' ),
+								__( 'Invalid JSON: %s', 'patterns-debug' ),
 								validation.detail
 						  )
 						: __(
 								'Attributes must be a JSON object.',
-								'wp-patterns-debug'
+								'patterns-debug'
 						  ) }
 				</Notice>
 			) }
@@ -70,7 +70,7 @@ export default function AttributesEditor( {
 						/* translators: %s: comma-separated attribute names. */
 						__(
 							'Not in the attribute schema: %s',
-							'wp-patterns-debug'
+							'patterns-debug'
 						),
 						validation.unknownKeys.join( ', ' )
 					) }
@@ -93,14 +93,14 @@ export default function AttributesEditor( {
 						}
 					} }
 				>
-					{ __( 'Apply', 'wp-patterns-debug' ) }
+					{ __( 'Apply', 'patterns-debug' ) }
 				</Button>
 				<Button
 					variant="tertiary"
 					disabled={ draft === null }
 					onClick={ () => setDraft( null ) }
 				>
-					{ __( 'Reset', 'wp-patterns-debug' ) }
+					{ __( 'Reset', 'patterns-debug' ) }
 				</Button>
 			</Flex>
 		</section>

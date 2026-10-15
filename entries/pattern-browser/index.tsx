@@ -22,7 +22,7 @@ import {
 import PatternItem from './pattern-item';
 import useServerRegistry from './use-server-registry';
 
-const ALL_OPTION = { label: __( 'All', 'wp-patterns-debug' ), value: '' };
+const ALL_OPTION = { label: __( 'All', 'patterns-debug' ), value: '' };
 
 const USER_PATTERNS_QUERY = { per_page: -1 };
 
@@ -90,7 +90,7 @@ export default function PatternBrowser() {
 	return (
 		<>
 			<PanelBody
-				title={ __( 'Server registry', 'wp-patterns-debug' ) }
+				title={ __( 'Server registry', 'patterns-debug' ) }
 				initialOpen={ false }
 			>
 				{ server.status === 'loading' && <Spinner /> }
@@ -100,7 +100,7 @@ export default function PatternBrowser() {
 						{ server.message ??
 							__(
 								'The registry request failed.',
-								'wp-patterns-debug'
+								'patterns-debug'
 							) }
 					</Notice>
 				) }
@@ -112,7 +112,7 @@ export default function PatternBrowser() {
 								/* translators: 1: pattern count phrase, 2: category count phrase. */
 								__(
 									'%1$s and %2$s registered server-side.',
-									'wp-patterns-debug'
+									'patterns-debug'
 								),
 								sprintf(
 									/* translators: %d: number of patterns. */
@@ -120,7 +120,7 @@ export default function PatternBrowser() {
 										'%d pattern',
 										'%d patterns',
 										server.registry.patterns.length,
-										'wp-patterns-debug'
+										'patterns-debug'
 									),
 									server.registry.patterns.length
 								),
@@ -130,7 +130,7 @@ export default function PatternBrowser() {
 										'%d category',
 										'%d categories',
 										server.registry.categories.length,
-										'wp-patterns-debug'
+										'patterns-debug'
 									),
 									server.registry.categories.length
 								)
@@ -141,11 +141,11 @@ export default function PatternBrowser() {
 								<DumpButton
 									label={ __(
 										'Dump server patterns',
-										'wp-patterns-debug'
+										'patterns-debug'
 									) }
 									title={ __(
 										'Server patterns',
-										'wp-patterns-debug'
+										'patterns-debug'
 									) }
 									getValue={ () => server.registry.patterns }
 								/>
@@ -154,11 +154,11 @@ export default function PatternBrowser() {
 								<DumpButton
 									label={ __(
 										'Dump server categories',
-										'wp-patterns-debug'
+										'patterns-debug'
 									) }
 									title={ __(
 										'Server categories',
-										'wp-patterns-debug'
+										'patterns-debug'
 									) }
 									getValue={ () =>
 										server.registry.categories
@@ -174,7 +174,7 @@ export default function PatternBrowser() {
 				<div className="wppd-browser__filters">
 					<SearchControl
 						__nextHasNoMarginBottom
-						label={ __( 'Search patterns', 'wp-patterns-debug' ) }
+						label={ __( 'Search patterns', 'patterns-debug' ) }
 						value={ filters.search }
 						onChange={ ( search ) =>
 							setFilters( { ...filters, search } )
@@ -182,7 +182,7 @@ export default function PatternBrowser() {
 					/>
 					<SelectControl
 						__nextHasNoMarginBottom
-						label={ __( 'Source', 'wp-patterns-debug' ) }
+						label={ __( 'Source', 'patterns-debug' ) }
 						value={ filters.source }
 						options={ toOptions( uniqueSources( patterns ) ) }
 						onChange={ ( source ) =>
@@ -191,7 +191,7 @@ export default function PatternBrowser() {
 					/>
 					<SelectControl
 						__nextHasNoMarginBottom
-						label={ __( 'Category', 'wp-patterns-debug' ) }
+						label={ __( 'Category', 'patterns-debug' ) }
 						value={ filters.category }
 						options={ toOptions( uniqueCategories( patterns ) ) }
 						onChange={ ( category ) =>
@@ -211,7 +211,7 @@ export default function PatternBrowser() {
 									'Showing %1$d of %2$d pattern.',
 									'Showing %1$d of %2$d patterns.',
 									patterns.length,
-									'wp-patterns-debug'
+									'patterns-debug'
 								),
 								filtered.length,
 								patterns.length

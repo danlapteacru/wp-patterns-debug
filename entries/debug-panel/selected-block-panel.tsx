@@ -20,7 +20,7 @@ export default function SelectedBlockPanel() {
 
 	return (
 		<PanelBody
-			title={ __( 'Selected block', 'wp-patterns-debug' ) }
+			title={ __( 'Selected block', 'patterns-debug' ) }
 			opened={ open }
 			onToggle={ () => setOpen( ! open ) }
 			className="wppd-panel"
@@ -30,7 +30,7 @@ export default function SelectedBlockPanel() {
 					<DebugSections block={ block } />
 				) : (
 					<p className="wppd-muted">
-						{ __( 'No block selected.', 'wp-patterns-debug' ) }
+						{ __( 'No block selected.', 'patterns-debug' ) }
 					</p>
 				) ) }
 		</PanelBody>

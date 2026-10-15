@@ -28,47 +28,45 @@ function metaEntries(
 	serverSource?: string
 ): [ string, string ][] {
 	const entries: [ string, string ][] = [
-		[ __( 'Name', 'wp-patterns-debug' ), pattern.name ],
+		[ __( 'Name', 'patterns-debug' ), pattern.name ],
 		[
-			__( 'Source', 'wp-patterns-debug' ),
-			pattern.source ??
-				serverSource ??
-				__( 'unknown', 'wp-patterns-debug' ),
+			__( 'Source', 'patterns-debug' ),
+			pattern.source ?? serverSource ?? __( 'unknown', 'patterns-debug' ),
 		],
 	];
 
 	if ( pattern.categories?.length ) {
 		entries.push( [
-			__( 'Categories', 'wp-patterns-debug' ),
+			__( 'Categories', 'patterns-debug' ),
 			pattern.categories.join( ', ' ),
 		] );
 	}
 
 	if ( pattern.blockTypes?.length ) {
 		entries.push( [
-			__( 'Block types', 'wp-patterns-debug' ),
+			__( 'Block types', 'patterns-debug' ),
 			pattern.blockTypes.join( ', ' ),
 		] );
 	}
 
 	if ( pattern.postTypes?.length ) {
 		entries.push( [
-			__( 'Post types', 'wp-patterns-debug' ),
+			__( 'Post types', 'patterns-debug' ),
 			pattern.postTypes.join( ', ' ),
 		] );
 	}
 
 	if ( pattern.syncStatus ) {
 		entries.push( [
-			__( 'Sync status', 'wp-patterns-debug' ),
+			__( 'Sync status', 'patterns-debug' ),
 			pattern.syncStatus,
 		] );
 	}
 
 	if ( pattern.inserter === false ) {
 		entries.push( [
-			__( 'Inserter', 'wp-patterns-debug' ),
-			__( 'hidden', 'wp-patterns-debug' ),
+			__( 'Inserter', 'patterns-debug' ),
+			__( 'hidden', 'patterns-debug' ),
 		] );
 	}
 
@@ -102,14 +100,14 @@ function PatternDetails( { pattern, serverPattern }: PatternItemProps ) {
 					</div>
 				) ) }
 				<div>
-					<dt>{ __( 'Blocks', 'wp-patterns-debug' ) }</dt>
+					<dt>{ __( 'Blocks', 'patterns-debug' ) }</dt>
 					<dd>
 						{ Object.entries( blockCounts )
 							.map(
 								( [ blockName, count ] ) =>
 									`${ blockName } ×${ count }`
 							)
-							.join( ', ' ) || __( 'none', 'wp-patterns-debug' ) }
+							.join( ', ' ) || __( 'none', 'patterns-debug' ) }
 					</dd>
 				</div>
 			</dl>
@@ -118,18 +116,18 @@ function PatternDetails( { pattern, serverPattern }: PatternItemProps ) {
 				<li>
 					<CopyButton
 						text={ pattern.name }
-						label={ __( 'Copy name', 'wp-patterns-debug' ) }
+						label={ __( 'Copy name', 'patterns-debug' ) }
 					/>
 				</li>
 				<li>
 					<CopyButton
 						text={ pattern.content }
-						label={ __( 'Copy content', 'wp-patterns-debug' ) }
+						label={ __( 'Copy content', 'patterns-debug' ) }
 					/>
 				</li>
 				<li>
 					<DumpButton
-						label={ __( 'Dump pattern', 'wp-patterns-debug' ) }
+						label={ __( 'Dump pattern', 'patterns-debug' ) }
 						title={ pattern.name }
 						getValue={ () => pattern }
 					/>
@@ -139,13 +137,13 @@ function PatternDetails( { pattern, serverPattern }: PatternItemProps ) {
 						<DumpButton
 							label={ __(
 								'Dump server registration',
-								'wp-patterns-debug'
+								'patterns-debug'
 							) }
 							title={ sprintf(
 								/* translators: %s: pattern name. */
 								__(
 									'Server registration: %s',
-									'wp-patterns-debug'
+									'patterns-debug'
 								),
 								pattern.name
 							) }
@@ -157,7 +155,7 @@ function PatternDetails( { pattern, serverPattern }: PatternItemProps ) {
 
 			<ToggleControl
 				__nextHasNoMarginBottom
-				label={ __( 'Preview', 'wp-patterns-debug' ) }
+				label={ __( 'Preview', 'patterns-debug' ) }
 				checked={ showPreview }
 				onChange={ setShowPreview }
 			/>

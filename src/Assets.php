@@ -54,7 +54,7 @@ final class Assets {
 			$asset['version'],
 			true
 		);
-		wp_set_script_translations( self::HANDLE, 'wp-patterns-debug', WP_PATTERNS_DEBUG_DIR . '/languages' );
+		wp_set_script_translations( self::HANDLE, 'patterns-debug', WP_PATTERNS_DEBUG_DIR . '/languages' );
 
 		wp_enqueue_style(
 			self::HANDLE,

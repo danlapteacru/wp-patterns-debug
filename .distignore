@@ -1,0 +1,13 @@
+# Excluded from the WordPress.org release zip
+.git
+.github
+.gitignore
+.editorconfig
+.distignore
+node_modules
+vendor
+screenshots
+composer.json
+composer.lock
+*.log
+.DS_Store
