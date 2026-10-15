@@ -18,11 +18,11 @@ registerPlugin( SIDEBAR_NAME, {
 	render: () => (
 		<>
 			<PluginSidebarMoreMenuItem target={ SIDEBAR_NAME }>
-				{ __( 'Patterns Debug', 'wp-patterns-debug' ) }
+				{ __( 'Patterns Debug', 'patterns-debug' ) }
 			</PluginSidebarMoreMenuItem>
 			<PluginSidebar
 				name={ SIDEBAR_NAME }
-				title={ __( 'Patterns Debug', 'wp-patterns-debug' ) }
+				title={ __( 'Patterns Debug', 'patterns-debug' ) }
 				icon={ bug }
 			>
 				<SelectedBlockPanel />

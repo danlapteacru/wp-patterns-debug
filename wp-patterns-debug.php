@@ -7,9 +7,10 @@
  * Requires at least: 6.6
  * Requires PHP: 8.1
  * Author: Dan Lapteacru
+ * Author URI: https://github.com/danlapteacru
  * License: GPL-2.0-or-later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: wp-patterns-debug
+ * Text Domain: patterns-debug
  *
  * @package wp-patterns-debug
  */
