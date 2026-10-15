@@ -1,5 +1,5 @@
 === Patterns Debug ===
-Contributors: danlapteacru
+Contributors: d1sabled
 Tags: patterns, block editor, gutenberg, debug, developer
 Requires at least: 6.6
 Tested up to: 7.1
